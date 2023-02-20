@@ -11,3 +11,9 @@ const greeting =('Hello ');
 const name =('Makers');
 
 console.log(greeting + name);
+
+const printMessage1 = require('./functions.js');
+const printMessage2 = require('./functions.js');
+
+printMessage1();
+printMessage2('Edward');
