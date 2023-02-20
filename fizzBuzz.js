@@ -10,9 +10,10 @@ const fizzBuzz = (integer) => {
   }
 }
 
-console.log(fizzBuzz(3));
-console.log(fizzBuzz(5));
-console.log(fizzBuzz(8));
-console.log(fizzBuzz(15));
-console.log(fizzBuzz(18));
-console.log(fizzBuzz(20));
+const fizzBuzzUntil = (stop) => {
+  for (let i = 1 ; i <= stop ; i++) {
+    console.log(fizzBuzz(i));
+  }
+}
+
+console.log(fizzBuzzUntil(10));
