@@ -7,13 +7,13 @@ console.log(`Hello, ${MyName}`);
 
 // fix this file
 
-const greeting =('Hello ');
-const name =('Makers');
+const greeting = "Hello ";
+const name = "Makers";
 
 console.log(greeting + name);
 
-const printMessage1 = require('./functions.js');
-const printMessage2 = require('./functions.js');
+const printMessage1 = require("./functions.js");
+const printMessage2 = require("./functions.js");
 
 printMessage1();
-printMessage2('Edward');
+printMessage2("Edward");
