@@ -18,9 +18,6 @@ class Rectangle {
 
 // Export the class
 
-
-
-
 class User {
 
   constructor(name) {
