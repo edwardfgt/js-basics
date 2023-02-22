@@ -3,6 +3,7 @@ const fetchPokemon = (pokemon) => {
   .then((response) => response.json())
   .then((data) => { 
        return {
+        name: data.name,
         id: data.id,
         height: data.height,
         weight: data.weight

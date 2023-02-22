@@ -1,6 +1,6 @@
 const fetchPokemon = require('./api')
 
-fetchPokemon('pikachu')
+fetchPokemon('charizard')
   .then((pokemon) => {
     console.log(pokemon)})
   .catch(error => console.log('ERROR'));
