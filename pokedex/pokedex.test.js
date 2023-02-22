@@ -1,19 +1,12 @@
-const fetchPokemon = require('./api')
+const Pokedex = require('./pokedex')
 
 describe('Pokedex', () => {
-  it('Can fetch the data for pikachu', () => {
-    return fetchPokemon('pikachu')
-      .then((pokemon) => {
-        expect(pokemon.id).toEqual(25);
-        expect(pokemon.name).toEqual('pikachu');
-      });
-  });
-
-  it('Can fetch the data for charizard', () => {
-    return fetchPokemon('charizard')
-      .then((pokemon) => {
-        expect(pokemon.id).toEqual(6);
-        expect(pokemon.name).toEqual('charizard');
-      });
+  it('Can fetch the data from api and output the elements (mocked)', () => {
+    const pokedex = new Pokedex();
+    const pikachu = {name: 'pikachu'}
+    const charizard = {name: 'charizard'}
+    pokedex.catch(pikachu);
+    pokedex.catch(charizard);
+    expect(pokedex.all()).toEqual(['pikachu', 'charizard'])
   });
 });
