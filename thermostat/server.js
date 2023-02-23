@@ -1,20 +1,28 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-counter = 0;
+const Thermostat = require('./thermostat');
+const thermostat = new Thermostat();
 
-app.get('/', (req, res) => {
-  res.send('Hello, express! This is a test')
+app.get('/temperature', (req, res) => {
+  const temperature = thermostat.getTemperature();
+  res.send(`The current temperature is: ${temperature} degrees`);
 });
 
-app.post('/counter', (req, res) => {
-  res.send('Got a POST request')
-  counter += 1;
+app.post('/up', (req, res) => {
+  thermostat.up();
+  res.send('Temperature increased')
 })
 
-app.get('/counter', (req, res) => {
-  res.send(counter)
-});
+app.post('/down', (req, res) => {
+  thermostat.down();
+  res.send('Temperature decreased')
+})
+
+app.post('/reset', (req, res) => {
+  thermostat.reset();
+  res.send('Temperature reset')
+})
 
 console.log(`Server listening on localhost:${port}`);
 app.listen(port);
